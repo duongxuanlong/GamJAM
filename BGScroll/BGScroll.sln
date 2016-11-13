@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{CD687EDE-2220-A22F-E7D3-5F52B91D6C8D}") = "BGScroll", "Assembly-CSharp.csproj", "{908B32DA-8A65-987A-0AA4-CF27462EF72D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{908B32DA-8A65-987A-0AA4-CF27462EF72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{908B32DA-8A65-987A-0AA4-CF27462EF72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{908B32DA-8A65-987A-0AA4-CF27462EF72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{908B32DA-8A65-987A-0AA4-CF27462EF72D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
