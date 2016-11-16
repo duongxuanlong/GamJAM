@@ -55,14 +55,14 @@ public class ExplosionForce2D : MonoBehaviour
 
 	void OnGUI()
 	{
-		if (GUI.Button(new Rect(10, 10, 100, 50), "Silde"))
-		{
-			SceneManager.LoadScene("slide");
-		}
-		if (GUI.Button(new Rect(300, 10, 100, 50), "Bounce"))
-		{
-			SceneManager.LoadScene("bounce");
-		}
+//		if (GUI.Button(new Rect(10, 10, 100, 50), "Silde"))
+//		{
+//			SceneManager.LoadScene("slide");
+//		}
+//		if (GUI.Button(new Rect(300, 10, 100, 50), "Bounce"))
+//		{
+//			SceneManager.LoadScene("bounce");
+//		}
 	}
 
 }
