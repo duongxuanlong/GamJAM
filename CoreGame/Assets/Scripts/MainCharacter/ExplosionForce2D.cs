@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class ExplosionForce2D : MonoBehaviour
 {
 	public float Power;
+	public float InversePower;
 	public float Radius;
 	public bool SceneChange;
 	
@@ -43,6 +44,29 @@ public class ExplosionForce2D : MonoBehaviour
 	
 		}
 
+	void Update()
+	{
+//		# if (UNITY_ANDROID || UNITY_IPHONE)
+//
+//		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
+//			Vector3 fingerPos = Input.GetTouch(0).position;
+//			fingerPos.z = 10;
+//			Vector3 objPos = Camera.main.ScreenToWorldPoint(fingerPos);
+//			AddExplosionForce(GetComponent<Rigidbody2D>(), Power * 100, objPos, Radius);
+//		}
+//
+//		# endif
+//
+//		# if (UNITY_EDITOR || UNITY_WEBPLAYER)
+//
+//		if (Input.GetButtonDown("Fire1")){
+//			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+//			mousePos.z = 0;
+//			AddExplosionForce(GetComponent<Rigidbody2D>(), Power * 100, mousePos, Radius);
+//		}
+//		# endif	
+	}
+
 		public static void AddExplosionForce (Rigidbody2D body, float expForce, Vector3 expPosition, float expRadius)
 		{
 				var dir = (body.transform.position - expPosition);
@@ -51,7 +75,7 @@ public class ExplosionForce2D : MonoBehaviour
 						calc = 0;		
 				}
 
-				body.AddForce (dir.normalized * expForce * calc);
+		body.AddForce (dir.normalized * expForce * calc);
 		}
 
 	void OnGUI()
@@ -92,6 +116,11 @@ public class ExplosionForce2D : MonoBehaviour
 		if (other.gameObject.tag == "SceneBars") {
 			if (SceneChange)
 				SceneManager.LoadScene ("General");
+		}
+
+		if (other.gameObject.tag == "Obstacles" || other.gameObject.tag == "EdgeCollider") {
+			//InversePower = Power * 100 / 3;
+			GetComponent<Rigidbody2D> ().AddForce (Power * 100 / 3 * Vector2.one);
 		}
 	}
 
