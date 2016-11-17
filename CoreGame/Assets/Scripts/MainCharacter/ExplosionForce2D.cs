@@ -134,7 +134,7 @@ public class ExplosionForce2D : MonoBehaviour
 		if (other.gameObject.tag == "BottomCollider") {
 			Debug.Log ("if here");
 			Gamemanager.isStarted = false;
-			SceneManager.LoadScene ("General");
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 		}
 
 		if (other.gameObject.tag == "SceneObstacles") {
