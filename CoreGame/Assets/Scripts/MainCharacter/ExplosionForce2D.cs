@@ -10,11 +10,12 @@ public class ExplosionForce2D : MonoBehaviour
 {
 	public float Power;
 	public float Radius;
+	public bool SceneChange;
 	
 		// Use this for initialization
 		void Start ()
 		{
-	
+			SceneChange = false;
 		}
 	
 		// Update is called once per frame
@@ -63,6 +64,35 @@ public class ExplosionForce2D : MonoBehaviour
 //		{
 //			SceneManager.LoadScene("bounce");
 //		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		Debug.Log ("OnTriggerEnter");
+//		if (other.tag == "BottomCollider") {
+//			Debug.Log ("if here");
+//			SceneManager.LoadScene ("General");
+//		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		Debug.Log ("OnCollisionEnter2D");
+		Debug.Log (other.gameObject.tag);
+		if (other.gameObject.tag == "BottomCollider") {
+			Debug.Log ("if here");
+			SceneManager.LoadScene ("General");
+		}
+
+		if (other.gameObject.tag == "SceneObstacles") {
+			Destroy (other.gameObject);
+			SceneChange = true;
+		}
+
+		if (other.gameObject.tag == "SceneBars") {
+			if (SceneChange)
+				SceneManager.LoadScene ("General");
+		}
 	}
 
 }

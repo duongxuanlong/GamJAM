@@ -39,6 +39,11 @@ public class GenerateColliders : MonoBehaviour {
 				bc.Value.localScale = new Vector2 (widthOfCollider, screenSize.y * 2);// widthOfCollider);
 			else
 				bc.Value.localScale = new Vector2 (screenSize.x * 2, widthOfCollider);// widthOfCollider);
+			
+			if (bc.Key == "Left" || bc.Key == "Right")
+				bc.Value.gameObject.tag = "EdgeCollider";
+			else
+				bc.Value.gameObject.tag = "BottomCollider";
 		}
 
 		//Change position of the objects to align perfectly with outer-edge of screen
@@ -52,9 +57,9 @@ public class GenerateColliders : MonoBehaviour {
 		//colliders["Top"].position = new Vector3(cameraPos.x, cameraPos.y + screenSize.y + (colliders["Top"].localScale.y * 0.5f));
 		colliders["Bottom"].position = new Vector3(cameraPos.x, cameraPos.y - screenSize.y - (colliders["Bottom"].localScale.y * 0.5f), 0);
 
-		colliders ["Right"].gameObject.tag = "EdgeCollider";
-		colliders ["Left"].gameObject.tag = "EdgeCollider";
-		colliders ["Left"].gameObject.tag = "BottomCollider";
+//		colliders ["Right"].gameObject.tag = "EdgeCollider";
+//		colliders ["Left"].gameObject.tag = "EdgeCollider";
+//		colliders ["Left"].gameObject.tag = "BottomCollider";
 	}
 
 	void Update()
