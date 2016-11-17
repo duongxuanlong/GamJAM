@@ -13,6 +13,19 @@ public class tap : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetMouseButtonDown(0))
+		{
+			isMousePressed = true;
+			mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			mousePos.z = 0;
+			transform.position = mousePos;
+		}
+		if (Input.GetMouseButtonUp(0))
+		{
+			isMousePressed = false;
+		}
+
 		if (Input.touchCount > 0)
 		{
 			Touch touch = Input.GetTouch(0);
@@ -36,16 +49,6 @@ public class tap : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetMouseButtonDown(0))
-		{
-			isMousePressed = true;
-			mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			mousePos.z = 0;
-			transform.position = mousePos;
-		}
-		if (Input.GetMouseButtonUp(0))
-		{
-			isMousePressed = false;
-		}
+
 	}
 }
