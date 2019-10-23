@@ -17,16 +17,20 @@ public class ExplosionForce2D : MonoBehaviour
 
 	private float blockrate = 0.3f;
 	private bool isSeperated = true;
-	private float blocktime;
+	private float blocktime = Time.time;
 	private int maxBall = 3;
 	// Use this for initialization
 
-	void Start ()
+	void Awake()
 	{
-		blocktime = Time.time;
 		if (!Gamemanager.isStarted) {
 			Time.timeScale = 0;
 		}
+	}
+
+	void Start ()
+	{
+		Gamemanager.SceneChange = false;
 	}
 
 	// Update is called once per frame
@@ -43,7 +47,7 @@ public class ExplosionForce2D : MonoBehaviour
 			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			mousePos.z = 0;
 			AddExplosionForce(GetComponent<Rigidbody2D>(), Power * 100, mousePos, Radius);
-			Instantiate (bum, mousePos, Quaternion.identity);
+			//Instantiate (bum, mousePos, Quaternion.identity);
 		}
 		# endif	
 
@@ -60,7 +64,7 @@ public class ExplosionForce2D : MonoBehaviour
 			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			mousePos.z = 0;
 			AddExplosionForce(GetComponent<Rigidbody2D>(), Power * 100, mousePos, Radius);
-			Instantiate (bum, mousePos, Quaternion.identity);
+			//Instantiate (bum, mousePos, Quaternion.identity);
 		}
 		# endif	
 
@@ -136,7 +140,6 @@ public class ExplosionForce2D : MonoBehaviour
 		if (other.gameObject.tag == "SceneBars") {
 			if (Gamemanager.SceneChange) {
 				Gamemanager.isStarted = false;
-				Gamemanager.SceneChange = false;
 				SceneManager.LoadScene ("General");
 			}
 

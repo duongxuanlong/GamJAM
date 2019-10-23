@@ -1,0 +1,21 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Camera\BGController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\MainCharacter\ballcontroller.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Background\GenerateColliders.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Background\Offset.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Camera\CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MainCharacter\bum.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gamemanager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Background\ObstacleController.cs" Line="47" Column="3" />
+      <File FileName="Assets\Scripts\Camera\BGController.cs" Line="37" Column="101" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="D:\GameLoft\GameJAM\constest\_source\CoreGame\Assets\Scripts\MainCharacter\ballcontroller.cs" line="130" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
